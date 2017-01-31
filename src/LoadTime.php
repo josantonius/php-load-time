@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * Calculate load time of pages or scripts.
  * 
@@ -8,9 +8,9 @@
  * @author     Josantonius - info@josantonius.com
  * @copyright  Copyright (c) 2017 JST PHP Framework
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @version    1.0.0
+ * @version    1.1.0
  * @link       https://github.com/Josantonius/PHP-LoadTime
- * @since      File available since 1.0.0 - Update: 2017-01-17
+ * @since      File available since 1.0.0 - Update: 2017-01-30
  */
 
 namespace Josantonius\LoadTime;
@@ -40,7 +40,7 @@ class LoadTime {
      *
      * @return float → seconds
      */
-    public static function start(): float {
+    public static function start() {
 
         return static::$startTime = microtime(true);
     }
@@ -52,7 +52,7 @@ class LoadTime {
      *
      * @return float → seconds
      */
-    public static function end(): float {
+    public static function end() {
 
         return round((microtime(true) - static::$startTime), 4);
     }
