@@ -2,15 +2,11 @@
 /**
  * Calculate load time of pages or scripts.
  * 
- * @category   JST
- * @package    LoadTime
- * @subpackage LoadTime
- * @author     Josantonius - info@josantonius.com
- * @copyright  Copyright (c) 2017 JST PHP Framework
+ * @author     Josantonius - hello@josantonius.com
+ * @copyright  Copyright (c) 2017
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @version    1.1.0
  * @link       https://github.com/Josantonius/PHP-LoadTime
- * @since      File available since 1.0.0 - Update: 2017-01-30
+ * @since      1.0.0
  */
 
 namespace Josantonius\LoadTime;
