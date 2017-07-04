@@ -29,7 +29,7 @@ class LoadTimeTest {
      */
     public static function testLoadTimeScript() {
 
-        if (!Hook::isActive()) {
+        if (!LoadTime::isActive()) {
 
             LoadTime::start();
 
