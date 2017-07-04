@@ -38,7 +38,7 @@ class LoadTime {
      */
     public static function start() {
 
-        return static::$startTime = microtime(true);
+        return self::$startTime = microtime(true);
     }
 
     /**
@@ -50,7 +50,7 @@ class LoadTime {
      */
     public static function end() {
 
-        return round((microtime(true) - static::$startTime), 4);
+        return round((microtime(true) - self::$startTime), 4);
     }
 
     /**
@@ -62,6 +62,6 @@ class LoadTime {
      */
     public static function isActive() {
 
-        return (static::$startTime) ? true : false;
+        return (self::$startTime) ? true : false;
     }
 }
