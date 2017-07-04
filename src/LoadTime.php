@@ -27,7 +27,7 @@ class LoadTime {
      *
      * @var float
      */
-    public static $startTime;
+    public static $startTime = false;
 
     /**
      * Set initial time.
@@ -51,5 +51,17 @@ class LoadTime {
     public static function end() {
 
         return round((microtime(true) - static::$startTime), 4);
+    }
+
+    /**
+     * Check if the timer has been started.
+     *
+     * @since 1.1.2
+     *
+     * @return boolean
+     */
+    public static function isActive() {
+
+        return ($startTime) ? true : false;
     }
 }

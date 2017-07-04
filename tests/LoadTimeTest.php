@@ -29,12 +29,15 @@ class LoadTimeTest {
      */
     public static function testLoadTimeScript() {
 
-        LoadTime::start();
+        if (!Hook::isActive()) {
 
-        for ($i=0; $i < 100000; $i++) { 
-            // print_r($i . ' ');
+            LoadTime::start();
+
+            for ($i=0; $i < 100000; $i++) { 
+                // print_r($i . ' ');
+            }
+
+            print_r('Script executed in: ' . LoadTime::end() . ' seconds.');
         }
-
-        print_r('Script executed in: ' . LoadTime::end() . ' seconds.'); 
     }
 }

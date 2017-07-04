@@ -57,6 +57,7 @@ Available methods in this library:
 ```php
 LoadTime::start();
 LoadTime::end();
+LoadTime::isActive();
 ```
 ### Usage
 
