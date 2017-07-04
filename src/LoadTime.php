@@ -62,6 +62,6 @@ class LoadTime {
      */
     public static function isActive() {
 
-        return ($startTime) ? true : false;
+        return (static::$startTime) ? true : false;
     }
 }
