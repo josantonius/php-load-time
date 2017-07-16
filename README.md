@@ -14,11 +14,21 @@ Calculate load time of pages or scripts.
 - [Available Methods](#available-methods)
 - [Usage](#usage)
 - [Tests](#tests)
-- [Exception Handler](#exception-handler)
 - [Contribute](#contribute)
 - [Repository](#repository)
-- [Licensing](#licensing)
+- [License](#license)
 - [Copyright](#copyright)
+
+---
+
+<p align="center"><strong>Take a look at the code</strong></p>
+
+<p align="center">
+  <a href="" title="Take a look at the code">
+  	<img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
+  </a>
+</p>
+
 ---
 
 ### Installation
@@ -99,9 +109,6 @@ Available test methods in this library:
 LoadTimeTest::testLoadTimeScript();
 ```
 
-### Exception Handler
-
-This library uses [exception handler](src/Exception) that you can customize.
 ### Contribute
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
 1. Fork the repository on GitHub to start making your changes.
@@ -115,7 +122,7 @@ This is intended for large and long-lived objects.
 
 All files in this repository were created and uploaded automatically with [Reposgit Creator](https://github.com/Josantonius/BASH-Reposgit).
 
-### Licensing
+### License
 
 This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file for more info.
 

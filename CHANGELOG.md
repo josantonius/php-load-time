@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.1.3 - 2017-07-16
+* Deleted `Josantonius\LoadTime\LoadTime` class.
+* Deleted `Josantonius\LoadTime\LoadTime::start()` method.
+* Deleted `Josantonius\LoadTime\LoadTime::end()` method.
+
 ## 1.1.2 - 2017-07-04
 
 * Added `Josantonius\LoadTime\LoadTime::isActive()` method.

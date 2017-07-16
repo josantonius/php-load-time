@@ -11,8 +11,6 @@
 
 namespace Josantonius\LoadTime;
 
-# use Josantonius\LoadTime\Exception\LoadTimeException;
-
 /**
  * Load time handler.
  *
