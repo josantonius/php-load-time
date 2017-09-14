@@ -82,7 +82,7 @@ print_r('Script executed in: ' . LoadTime::end() . ' seconds.');
 
 ### Tests 
 
-Para ejecutar las [pruebas](tests/LoadTime/test) simplemente:
+Para ejecutar las [pruebas](tests/LoadTime/Test) simplemente:
 
     $ git clone https://github.com/Josantonius/PHP-LoadTime.git
     

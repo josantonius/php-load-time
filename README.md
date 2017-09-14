@@ -82,7 +82,7 @@ print_r('Script executed in: ' . LoadTime::end() . ' seconds.');
 
 ### Tests 
 
-To run [tests](tests/LoadTime/test) simply:
+To run [tests](tests/LoadTime/Test) simply:
 
     $ git clone https://github.com/Josantonius/PHP-LoadTime.git
     
