@@ -1,6 +1,6 @@
 # PHP LoadTime library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/loadtime/v/stable)](https://packagist.org/packages/josantonius/loadtime) [![Total Downloads](https://poser.pugx.org/josantonius/loadtime/downloads)](https://packagist.org/packages/josantonius/loadtime) [![Latest Unstable Version](https://poser.pugx.org/josantonius/loadtime/v/unstable)](https://packagist.org/packages/josantonius/loadtime) [![License](https://poser.pugx.org/josantonius/loadtime/license)](https://packagist.org/packages/josantonius/loadtime)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/loadtime/v/stable)](https://packagist.org/packages/josantonius/loadtime) [![Total Downloads](https://poser.pugx.org/josantonius/loadtime/downloads)](https://packagist.org/packages/josantonius/loadtime) [![Latest Unstable Version](https://poser.pugx.org/josantonius/loadtime/v/unstable)](https://packagist.org/packages/josantonius/loadtime) [![License](https://poser.pugx.org/josantonius/loadtime/license)](https://packagist.org/packages/josantonius/loadtime) [![Travis](https://travis-ci.org/Josantonius/PHP-LoadTime.svg)](https://travis-ci.org/Josantonius/PHP-LoadTime)
 
 [Versión en español](README-ES.md)
 
@@ -18,16 +18,6 @@ Calculate load time of pages or scripts.
 - [Repository](#repository)
 - [License](#license)
 - [Copyright](#copyright)
-
----
-
-<p align="center"><strong>Take a look at the code</strong></p>
-
-<p align="center">
-  <a href="https://youtu.be/bgcmyA4K9Kw" title="Take a look at the code">
-  	<img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
-  </a>
-</p>
 
 ---
 
@@ -92,22 +82,13 @@ print_r('Script executed in: ' . LoadTime::end() . ' seconds.');
 
 ### Tests 
 
-To use the [test](tests) class, simply:
+To run [tests](tests/LoadTime/test) simply:
 
-```php
-<?php
-$loader = require __DIR__ . '/vendor/autoload.php';
+    $ git clone https://github.com/Josantonius/PHP-LoadTime.git
+    
+    $ cd PHP-LoadTime
 
-$loader->addPsr4('Josantonius\\LoadTime\\Tests\\', __DIR__ . '/vendor/josantonius/loadtime/tests');
-
-use Josantonius\LoadTime\Tests\LoadTimeTest;
-
-```
-Available test methods in this library:
-
-```php
-LoadTimeTest::testLoadTimeScript();
-```
+    $ phpunit
 
 ### Contribute
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
