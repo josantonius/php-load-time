@@ -32,7 +32,7 @@ class LoadTime
      *
      * @since 1.0.0
      *
-     * @return float → seconds
+     * @return float → microtime
      */
     public static function start()
     {

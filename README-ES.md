@@ -58,7 +58,7 @@ Métodos disponibles en esta biblioteca:
 LoadTime::start();
 ```
 
-**# Return** (float) → segundos
+**# Return** (float) → microtime
 
 ### - Detener temporizador:
 

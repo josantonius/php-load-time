@@ -58,7 +58,7 @@ Available methods in this library:
 LoadTime::start();
 ```
 
-**# Return** (float) → seconds
+**# Return** (float) → microtime
 
 ### - Set end time:
 
