@@ -1,6 +1,6 @@
 # PHP LoadTime library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/loadtime/v/stable)](https://packagist.org/packages/josantonius/loadtime) [![Total Downloads](https://poser.pugx.org/josantonius/loadtime/downloads)](https://packagist.org/packages/josantonius/loadtime) [![Latest Unstable Version](https://poser.pugx.org/josantonius/loadtime/v/unstable)](https://packagist.org/packages/josantonius/loadtime) [![License](https://poser.pugx.org/josantonius/loadtime/license)](https://packagist.org/packages/josantonius/loadtime) [![Travis](https://travis-ci.org/Josantonius/PHP-LoadTime.svg)](https://travis-ci.org/Josantonius/PHP-LoadTime)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/LoadTime/v/stable)](https://packagist.org/packages/josantonius/LoadTime) [![Latest Unstable Version](https://poser.pugx.org/josantonius/LoadTime/v/unstable)](https://packagist.org/packages/josantonius/LoadTime) [![License](https://poser.pugx.org/josantonius/LoadTime/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/57116769927e42828991c8f68fd76870)](https://www.codacy.com/app/Josantonius/PHP-LoadTime?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/PHP-LoadTime&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/josantonius/LoadTime/downloads)](https://packagist.org/packages/josantonius/LoadTime) [![Travis](https://travis-ci.org/Josantonius/PHP-LoadTime.svg)](https://travis-ci.org/Josantonius/PHP-LoadTime) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![CodeCov](https://codecov.io/gh/Josantonius/PHP-LoadTime/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/PHP-LoadTime)
 
 [Versión en español](README-ES.md)
 
@@ -8,10 +8,10 @@ Calculate load time of pages or scripts.
 
 ---
 
-- [Installation](#installation)
 - [Requirements](#requirements)
-- [Quick Start and Examples](#quick-start-and-examples)
+- [Installation](#installation)
 - [Available Methods](#available-methods)
+- [Quick Start](#quick-start)
 - [Usage](#usage)
 - [Tests](#tests)
 - [TODO](#-todo)
@@ -22,45 +22,79 @@ Calculate load time of pages or scripts.
 
 ---
 
-### Installation
+## Requirements
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+This library is supported by **PHP versions 5.6** or higher and is compatible with **HHVM versions 3.0** or higher.
 
-To install PHP LoadTime library, simply:
+## Installation
+
+The preferred way to install this extension is through [Composer](http://getcomposer.org/download/).
+
+To install **PHP LoadTime library**, simply:
 
     $ composer require Josantonius/LoadTime
 
-The previous command will only install the necessary files, if you prefer to download the entire source code (including tests, vendor folder, exceptions not used, docs...) you can use:
+The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
 
     $ composer require Josantonius/LoadTime --prefer-source
 
-Or you can also clone the complete repository with Git:
+You can also **clone the complete repository** with Git:
 
-	$ git clone https://github.com/Josantonius/PHP-LoadTime.git
+  $ git clone https://github.com/Josantonius/PHP-LoadTime.git
 
-### Requirements
+Or **install it manually**:
 
-This library is supported by PHP versions 5.6 or higher and is compatible with HHVM versions 3.0 or higher.
+[Download LoadTime.php](https://raw.githubusercontent.com/Josantonius/PHP-LoadTime/master/src/LoadTime.php):
 
-### Quick Start and Examples
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-LoadTime/master/src/LoadTime.php
 
-To use this class, simply:
+## Available Methods
+
+Available methods in this library:
+
+### - Set initial time:
+
+```php
+LoadTime::start();
+```
+
+**# Return** (float) → seconds
+
+### - Set end time:
+
+```php
+LoadTime::end();
+```
+
+**# Return** (float) → seconds
+
+### - Check if the timer has been started:
+
+```php
+LoadTime::isActive();
+```
+
+**# Return** (boolean)
+
+## Quick Start
+
+To use this library with **Composer**:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\LoadTime\LoadTime;
 ```
-### Available Methods
 
-Available methods in this library:
+Or If you installed it **manually**, use it:
 
 ```php
-LoadTime::start();
-LoadTime::end();
-LoadTime::isActive();
+require_once __DIR__ . '/LoadTime.php';
+
+use Josantonius\LoadTime\LoadTime;
 ```
-### Usage
+
+## Usage
 
 Example of use for this library:
 
@@ -81,22 +115,34 @@ print_r('Script executed in: ' . LoadTime::end() . ' seconds.');
 /* Script executed in: 0.0012 seconds. */
 ```
 
-### Tests 
+## Tests 
 
-To run [tests](tests/LoadTime/Test) simply:
+To run [tests](tests) you just need [Composer](http://getcomposer.org/download/) and to execute the following:
 
     $ git clone https://github.com/Josantonius/PHP-LoadTime.git
     
     $ cd PHP-LoadTime
 
-    $ phpunit
+    $ composer install
 
-### ☑ TODO
+Run unit tests with [PHPUnit](https://phpunit.de/):
+
+    $ composer phpunit
+
+Run [PSR2](http://www.php-fig.org/psr/psr-2/) code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+
+    $ composer phpcs
+
+Run all previous tests:
+
+    $ composer tests
+
+## ☑ TODO
 
 - [x] Create tests
-- [ ] Improve documentation
+- [x] Improve documentation
 
-### Contribute
+## Contribute
 
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
 1. Fork the repository on GitHub to start making your changes.
@@ -106,15 +152,15 @@ To run [tests](tests/LoadTime/Test) simply:
 
 This is intended for large and long-lived objects.
 
-### Repository
+## Repository
 
 All files in this repository were created and uploaded automatically with [Reposgit Creator](https://github.com/Josantonius/BASH-Reposgit).
 
-### License
+## License
 
 This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file for more info.
 
-### Copyright
+## Copyright
 
 2017 Josantonius, [josantonius.com](https://josantonius.com/)
 

@@ -1,6 +1,6 @@
 # PHP LoadTime library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/loadtime/v/stable)](https://packagist.org/packages/josantonius/loadtime) [![Total Downloads](https://poser.pugx.org/josantonius/loadtime/downloads)](https://packagist.org/packages/josantonius/loadtime) [![Latest Unstable Version](https://poser.pugx.org/josantonius/loadtime/v/unstable)](https://packagist.org/packages/josantonius/loadtime) [![License](https://poser.pugx.org/josantonius/loadtime/license)](https://packagist.org/packages/josantonius/loadtime) [![Travis](https://travis-ci.org/Josantonius/PHP-LoadTime.svg)](https://travis-ci.org/Josantonius/PHP-LoadTime)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/LoadTime/v/stable)](https://packagist.org/packages/josantonius/LoadTime) [![Latest Unstable Version](https://poser.pugx.org/josantonius/LoadTime/v/unstable)](https://packagist.org/packages/josantonius/LoadTime) [![License](https://poser.pugx.org/josantonius/LoadTime/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/57116769927e42828991c8f68fd76870)](https://www.codacy.com/app/Josantonius/PHP-LoadTime?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/PHP-LoadTime&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/josantonius/LoadTime/downloads)](https://packagist.org/packages/josantonius/LoadTime) [![Travis](https://travis-ci.org/Josantonius/PHP-LoadTime.svg)](https://travis-ci.org/Josantonius/PHP-LoadTime) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![CodeCov](https://codecov.io/gh/Josantonius/PHP-LoadTime/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/PHP-LoadTime)
 
 [English version](README.md)
 
@@ -8,10 +8,10 @@ Calcular tiempo de carga de páginas o scripts.
 
 ---
 
-- [Instalación](#instalación)
 - [Requisitos](#requisitos)
-- [Cómo empezar y ejemplos](#cómo-empezar-y-ejemplos)
+- [Instalación](#instalación)
 - [Métodos disponibles](#métodos-disponibles)
+- [Cómo empezar](#cómo-empezar)
 - [Uso](#uso)
 - [Tests](#tests)
 - [Tareas pendientes](#-tareas-pendientes)
@@ -22,45 +22,81 @@ Calcular tiempo de carga de páginas o scripts.
 
 ---
 
-### Instalación 
+## Requisitos
 
-La mejor forma de instalar esta extensión es a través de [composer](http://getcomposer.org/download/).
+Esta clase es soportada por versiones de **PHP 5.6** o superiores y es compatible con versiones de **HHVM 3.0** o superiores.
 
-Para instalar PHP LoadTime library, simplemente escribe:
+## Instalación 
+
+La mejor forma de instalar esta extensión es a través de [Composer](http://getcomposer.org/download/).
+
+Para instalar **PHP LoadTime library**, simplemente escribe:
 
     $ composer require Josantonius/LoadTime
 
-El comando anterior sólo instalará los archivos necesarios, si prefieres descargar todo el código fuente (incluyendo tests, directorio vendor, excepciones no utilizadas, documentos...) puedes utilizar:
+El comando anterior sólo instalará los archivos necesarios, si prefieres **descargar todo el código fuente** puedes utilizar:
 
     $ composer require Josantonius/LoadTime --prefer-source
 
-También puedes clonar el repositorio completo con Git:
+También puedes **clonar el repositorio** completo con Git:
 
-	$ git clone https://github.com/Josantonius/PHP-LoadTime.git
+  $ git clone https://github.com/Josantonius/PHP-LoadTime.git
 
-### Requisitos
+O **instalarlo manualmente**:
 
-Esta biblioteca es soportada por versiones de PHP 5.6 o superiores y es compatible con versiones de HHVM 3.0 o superiores.
+[Descargar LoadTime.php](https://raw.githubusercontent.com/Josantonius/PHP-LoadTime/master/src/LoadTime.php):
 
-### Cómo empezar y ejemplos
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-LoadTime/master/src/LoadTime.php
+
+## Métodos disponibles
+
+Métodos disponibles en esta biblioteca:
+
+### - Activar temporizador:
+
+```php
+LoadTime::start();
+```
+
+**# Return** (float) → segundos
+
+### - Detener temporizador:
+
+```php
+LoadTime::end();
+```
+
+**# Return** (float) → segundos
+
+### - Comprobar si se ha iniciado el temporizador:
+
+```php
+LoadTime::isActive();
+```
+
+**# Return** (boolean)
+
+## Cómo empezar y ejemplos
 
 Para utilizar esta biblioteca, simplemente:
+
+Para utilizar esta biblioteca con **Composer**:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\LoadTime\LoadTime;
 ```
-### Métodos disponibles
 
-Métodos disponibles en esta biblioteca:
+Si la instalaste **manualmente**, utiliza:
 
 ```php
-LoadTime::start();
-LoadTime::end();
-LoadTime::isActive();
+require_once __DIR__ . '/LoadTime.php';
+
+use Josantonius\LoadTime\LoadTime;
 ```
-### Uso
+
+## Uso
 
 Ejemplo de uso para esta biblioteca:
 
@@ -81,22 +117,34 @@ print_r('Script executed in: ' . LoadTime::end() . ' seconds.');
 /* Script executed in: 0.0012 seconds. */
 ```
 
-### Tests 
+## Tests 
 
-Para ejecutar las [pruebas](tests/LoadTime/Test) simplemente:
+Para ejecutar las [pruebas](tests) necesitarás [Composer](http://getcomposer.org/download/) y seguir los siguientes pasos:
 
     $ git clone https://github.com/Josantonius/PHP-LoadTime.git
     
     $ cd PHP-LoadTime
 
-    $ phpunit
+    $ composer install
 
-### ☑ Tareas pendientes
+Ejecutar pruebas unitarias con [PHPUnit](https://phpunit.de/):
+
+    $ composer phpunit
+
+Ejecutar pruebas de estándares de código [PSR2](http://www.php-fig.org/psr/psr-2/) con [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+
+    $ composer phpcs
+
+Ejecutar todas las pruebas anteriores:
+
+    $ composer tests
+
+## ☑ Tareas pendientes
 
 - [x] Completar tests
-- [ ] Mejorar la documentación
+- [x] Mejorar la documentación
 
-### Contribuir
+## Contribuir
 
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
 1. Bifurca la rama del repositorio en GitHub para iniciar la operación de ajuste.
@@ -106,15 +154,15 @@ Para ejecutar las [pruebas](tests/LoadTime/Test) simplemente:
 
 Esto está pensado para proyectos grandes y de larga duración.
 
-### Repositorio
+## Repositorio
 
 Los archivos de este repositorio se crearon y subieron automáticamente con [Reposgit Creator](https://github.com/Josantonius/BASH-Reposgit).
 
-### Licencia
+## Licencia
 
 Este proyecto está licenciado bajo **licencia MIT**. Consulta el archivo [LICENSE](LICENSE) para más información.
 
-### Copyright
+## Copyright
 
 2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
