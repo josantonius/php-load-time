@@ -8,7 +8,6 @@
  * @link      https://github.com/Josantonius/PHP-LoadTime
  * @since     1.1.4
  */
-
 namespace Josantonius\LoadTime;
 
 use PHPUnit\Framework\TestCase;
@@ -21,62 +20,84 @@ use PHPUnit\Framework\TestCase;
 class LoadTimeTest extends TestCase
 {
     /**
+     * LoadTime instance.
+     *
+     * @since 1.1.6
+     *
+     * @var object
+     */
+    protected $LoadTime;
+
+    /**
+     * Set up.
+     *
+     * @since 1.1.6
+     */
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->LoadTime = new LoadTime;
+    }
+
+    /**
+     * Check if it is an instance of LoadTime.
+     *
+     * @since 1.1.6
+     */
+    public function testIsInstanceOfLoadTime()
+    {
+        $actual = $this->LoadTime;
+        $this->assertInstanceOf('Josantonius\LoadTime\LoadTime', $actual);
+    }
+
+    /**
      * Start chronometer.
      *
      * @since 1.1.4
-     *
-     * @return void
      */
     public function testStart()
     {
-        $this->assertInternalType('float', LoadTime::start());
+        $this->assertInternalType('float', $this->LoadTime->start());
     }
 
     /**
      * Test chronometer is active.
      *
      * @since 1.1.4
-     *
-     * @return void
      */
     public function testIsActiveTrue()
     {
-        $this->assertTrue(LoadTime::isActive());
+        $this->assertTrue($this->LoadTime->isActive());
     }
 
     /**
      * End chronometer.
      *
      * @since 1.1.4
-     *
-     * @return void
      */
     public function testEnd()
     {
-        $this->assertInternalType('float', LoadTime::end());
+        $this->assertInternalType('float', $this->LoadTime->end());
     }
 
     /**
      * Test chronometer is inactive.
      *
      * @since 1.1.4
-     *
-     * @return void
      */
     public function testIsActiveFalse()
     {
-        $this->assertFalse(LoadTime::isActive());
+        $this->assertFalse($this->LoadTime->isActive());
     }
 
     /**
      * Test chronometer is inactive.
      *
      * @since 1.1.4
-     *
-     * @return void
      */
     public function testEndError()
     {
-        $this->assertFalse(LoadTime::end());
+        $this->assertFalse($this->LoadTime->end());
     }
 }

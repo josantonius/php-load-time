@@ -8,7 +8,6 @@
  * @link      https://github.com/Josantonius/PHP-LoadTime
  * @since     1.0.0
  */
-
 namespace Josantonius\LoadTime;
 
 /**
@@ -61,7 +60,7 @@ class LoadTime
      *
      * @since 1.1.2
      *
-     * @return boolean
+     * @return bool
      */
     public static function isActive()
     {
