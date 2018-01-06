@@ -3,7 +3,7 @@
  * Calculate load time of pages or scripts.
  *
  * @author    Josantonius <hello@josantonius.com>
- * @copyright 2017 (c) Josantonius - PHP-LoadTime
+ * @copyright 2017 - 2018 (c) Josantonius - PHP-LoadTime
  * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link      https://github.com/Josantonius/PHP-LoadTime
  * @since     1.0.0
@@ -12,15 +12,11 @@ namespace Josantonius\LoadTime;
 
 /**
  * Load time handler.
- *
- * @since 1.0.0
  */
 class LoadTime
 {
     /**
      * Save initial status time.
-     *
-     * @since 1.0.0
      *
      * @var float
      */
@@ -28,8 +24,6 @@ class LoadTime
 
     /**
      * Set initial time.
-     *
-     * @since 1.0.0
      *
      * @return float → microtime
      */
@@ -40,8 +34,6 @@ class LoadTime
 
     /**
      * Set end time.
-     *
-     * @since 1.0.0
      *
      * @return float → seconds
      */
@@ -60,7 +52,7 @@ class LoadTime
      *
      * @since 1.1.2
      *
-     * @return bool
+     * @return boolean
      */
     public static function isActive()
     {

@@ -3,7 +3,7 @@
  * Calculate load time of pages or scripts.
  *
  * @author    Josantonius <hello@josantonius.com>
- * @copyright 2017 (c) Josantonius - PHP-LoadTime
+ * @copyright 2017 - 2018 (c) Josantonius - PHP-LoadTime
  * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link      https://github.com/Josantonius/PHP-LoadTime
  * @since     1.1.4
@@ -14,8 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Tests class for LoadTime library.
- *
- * @since 1.1.4
  */
 class LoadTimeTest extends TestCase
 {
@@ -47,57 +45,56 @@ class LoadTimeTest extends TestCase
      */
     public function testIsInstanceOfLoadTime()
     {
-        $actual = $this->LoadTime;
-        $this->assertInstanceOf('Josantonius\LoadTime\LoadTime', $actual);
+        $this->assertInstanceOf('Josantonius\LoadTime\LoadTime', $this->LoadTime);
     }
 
     /**
      * Start chronometer.
-     *
-     * @since 1.1.4
      */
     public function testStart()
     {
-        $this->assertInternalType('float', $this->LoadTime->start());
+        $loadTime = $this->LoadTime;
+
+        $this->assertInternalType('float', $loadTime::start());
     }
 
     /**
      * Test chronometer is active.
-     *
-     * @since 1.1.4
      */
     public function testIsActiveTrue()
     {
-        $this->assertTrue($this->LoadTime->isActive());
+        $loadTime = $this->LoadTime;
+
+        $this->assertTrue($loadTime::isActive());
     }
 
     /**
      * End chronometer.
-     *
-     * @since 1.1.4
      */
     public function testEnd()
     {
-        $this->assertInternalType('float', $this->LoadTime->end());
+        $loadTime = $this->LoadTime;
+
+        $this->assertInternalType('float', $loadTime::end());
     }
 
     /**
      * Test chronometer is inactive.
-     *
-     * @since 1.1.4
      */
     public function testIsActiveFalse()
     {
-        $this->assertFalse($this->LoadTime->isActive());
+        $loadTime = $this->LoadTime;
+
+        $this->assertFalse($loadTime::isActive());
     }
 
     /**
      * Test chronometer is inactive.
-     *
-     * @since 1.1.4
      */
     public function testEndError()
     {
-        $this->assertFalse($this->LoadTime->end());
+        $loadTime = $this->LoadTime;
+
+        $this->assertFalse($loadTime::end());
     }
 }
